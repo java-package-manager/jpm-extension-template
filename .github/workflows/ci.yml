@@ -9,10 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # the "extension" descriptor needs jpm 0.12.0 (until then: JPM_VERSION=canary)
-      - name: Install jpm
-        run: |
-          curl -fsSL https://github.com/java-package-manager/jpm/releases/latest/download/install.sh | JPM_VERSION=canary sh
-          echo "$HOME/.jpm/bin" >> "$GITHUB_PATH"
+      # the "extension" descriptor needs jpm 0.12.0 (until then: the canary)
+      - uses: java-package-manager/setup-jpm@v1
+        with:
+          version: canary
       - run: jpm test --frozen
       - run: jpm build
