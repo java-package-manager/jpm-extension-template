@@ -9,9 +9,9 @@
   "java": "21",
   "main": "dev.example.hello.Main",
   // jpm's client (dev.jpm:jpm-api) is published here
-  "repositories": ["https://repo.thenextlvl.net/releases", "https://repo.thenextlvl.net/snapshots"],
+  "repositories": ["https://repo.thenextlvl.net/releases"],
   "runtime": {
-    "dev.jpm:jpm-api": "0.11.0-20261122.183444-2"
+    "dev.jpm:jpm-api": "^0.12.0"
   },
   "test": {
     "org.junit.jupiter:junit-jupiter": "5.11.4"
