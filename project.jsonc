@@ -1,0 +1,32 @@
+// A jpm extension: `jpm hello` once a project declares it (`jpm add github:<you>/jpm-hello`).
+// Rename it by changing "name" (jpm-<command>), "main", the package, and the "extension" commands.
+{
+  "name": "jpm-hello",
+  "group": "dev.example",
+  "version": "0.1.0",
+  "description": "An example jpm extension: says hello to every module",
+  "license": "MIT",
+  "java": "21",
+  "main": "dev.example.hello.Main",
+  // jpm's client (dev.jpm:jpm-api) is published here
+  "repositories": ["https://repo.thenextlvl.net/releases", "https://repo.thenextlvl.net/snapshots"],
+  "runtime": {
+    "dev.jpm:jpm-api": "0.11.0-20261122.183444-2"
+  },
+  "test": {
+    "org.junit.jupiter:junit-jupiter": "5.11.4"
+  },
+  // what jpm tells IDEs about this extension (extensions/list); jpm never runs it to find out
+  "extension": {
+    "description": "Say hello to every module",
+    "commands": {
+      "hello": {
+        "description": "Print a greeting for every module of the project",
+        "options": {
+          "--name": { "argument": "name", "description": "Who says hello (default: jpm)" },
+          "--json": { "description": "Print the greetings as JSON" }
+        }
+      }
+    }
+  }
+}
