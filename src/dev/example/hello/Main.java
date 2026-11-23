@@ -17,9 +17,12 @@ import java.util.Map;
  * {@code JPM_PROJECT_DIR} set, and the extension asks that jpm about the project over its protocol.
  */
 public final class Main {
-    private Main() {}
+    private Main() {
+    }
 
-    /** The options of {@code jpm hello}, as the descriptor in project.jsonc lists them. */
+    /**
+     * The options of {@code jpm hello}, as the descriptor in project.jsonc lists them.
+     */
     record Options(String name, boolean json) {}
 
     public static void main(String[] args) {
@@ -45,7 +48,9 @@ public final class Main {
         }
     }
 
-    /** The options, or null for {@code --help}. */
+    /**
+     * The options, or null for {@code --help}.
+     */
     static Options parse(List<String> args) {
         String name = "jpm";
         boolean json = false;
@@ -65,7 +70,9 @@ public final class Main {
         return new Options(name, json);
     }
 
-    /** One greeting per module, as text or as JSON. */
+    /**
+     * One greeting per module, as text or as JSON.
+     */
     static String greetings(Project p, Options o) {
         List<Object> out = new ArrayList<>();
         StringBuilder text = new StringBuilder();

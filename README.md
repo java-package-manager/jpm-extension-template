@@ -35,7 +35,8 @@ jpm installs Git extensions from their tags: tag a release with the version in `
 ## Develop
 
 ```sh
-jpm test
+jpm check     # every check (jpm-format's formatting and lint among them), then the tests, as CI runs them
+jpm format    # format the sources with jpm-format
 jpm build
 JPM_EXE=jpm JPM_PROJECT_DIR=/path/to/a/project jpm start -- --name you
 ```
