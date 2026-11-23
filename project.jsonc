@@ -28,5 +28,8 @@
         }
       }
     }
+  },
+  "extensions": {
+    "github:java-package-manager/jpm-format": "^0.3.1"
   }
 }

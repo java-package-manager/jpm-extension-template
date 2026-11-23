@@ -11,5 +11,6 @@ jobs:
       - uses: actions/checkout@v7
       # the "extension" descriptor needs jpm 0.12.0 or newer
       - uses: java-package-manager/setup-jpm@v1
-      - run: jpm test --frozen
+      # every check, jpm-format's formatting and lint among them, then the tests
+      - run: jpm check --frozen
       - run: jpm build
